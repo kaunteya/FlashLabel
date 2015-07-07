@@ -30,7 +30,7 @@ class FlashLabel: NSTextField {
     func setVisibility(enabled: Bool, animated: Bool) {
         if animated {
             NSAnimationContext.beginGrouping()
-            NSAnimationContext.currentContext().duration = 3
+            NSAnimationContext.currentContext().duration = 1.5
             NSAnimationContext.currentContext().timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
             self.animator().alphaValue = enabled ? 1 : 0
             NSAnimationContext.endGrouping()
