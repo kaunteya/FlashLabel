@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FlashLabel'
-  s.version = '0.1.0'
+  s.version = '0.3.0'
   s.license = 'MIT'
   s.summary = 'Simple and Lightweight Timer Label for Mac'
   s.homepage = 'https://github.com/kaunteya/FlashLabel'
