@@ -9,19 +9,16 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var enableFlash: Bool = false
+    @IBOutlet weak var flashLabel: FlashLabel!
+    
+    @IBAction func enableFlash(sender: NSButton) {
+        enableFlash = sender.state == NSOnState
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    
+    @IBAction func buttonPressed(sender: NSButton) {
+        flashLabel.show("Please enter a valid password", forDuration: 1.6, withFlash: self.enableFlash)
     }
-
 
 }
 

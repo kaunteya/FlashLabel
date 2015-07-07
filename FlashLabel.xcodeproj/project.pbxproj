@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		E3530A421B4C2D6D0023CE3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3530A411B4C2D6D0023CE3B /* AppDelegate.swift */; };
 		E3530A441B4C2D6D0023CE3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3530A431B4C2D6D0023CE3B /* ViewController.swift */; };
-		E3530A461B4C2D6D0023CE3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3530A451B4C2D6D0023CE3B /* Images.xcassets */; };
 		E3530A491B4C2D6D0023CE3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3530A471B4C2D6D0023CE3B /* Main.storyboard */; };
 		E3530A551B4C2D6D0023CE3B /* FlashLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3530A541B4C2D6D0023CE3B /* FlashLabelTests.swift */; };
+		E3D8E7541B4C2F150069B17B /* FlashLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8E7531B4C2F150069B17B /* FlashLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,11 +29,11 @@
 		E3530A401B4C2D6D0023CE3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3530A411B4C2D6D0023CE3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3530A431B4C2D6D0023CE3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3530A451B4C2D6D0023CE3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E3530A481B4C2D6D0023CE3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3530A4E1B4C2D6D0023CE3B /* FlashLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3530A531B4C2D6D0023CE3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3530A541B4C2D6D0023CE3B /* FlashLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashLabelTests.swift; sourceTree = "<group>"; };
+		E3D8E7531B4C2F150069B17B /* FlashLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +57,7 @@
 		E3530A331B4C2D6D0023CE3B = {
 			isa = PBXGroup;
 			children = (
+				E3D8E7531B4C2F150069B17B /* FlashLabel.swift */,
 				E3530A3E1B4C2D6D0023CE3B /* FlashLabel */,
 				E3530A511B4C2D6D0023CE3B /* FlashLabelTests */,
 				E3530A3D1B4C2D6D0023CE3B /* Products */,
@@ -77,7 +78,6 @@
 			children = (
 				E3530A411B4C2D6D0023CE3B /* AppDelegate.swift */,
 				E3530A431B4C2D6D0023CE3B /* ViewController.swift */,
-				E3530A451B4C2D6D0023CE3B /* Images.xcassets */,
 				E3530A471B4C2D6D0023CE3B /* Main.storyboard */,
 				E3530A3F1B4C2D6D0023CE3B /* Supporting Files */,
 			);
@@ -189,7 +189,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3530A461B4C2D6D0023CE3B /* Images.xcassets in Resources */,
 				E3530A491B4C2D6D0023CE3B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3530A441B4C2D6D0023CE3B /* ViewController.swift in Sources */,
+				E3D8E7541B4C2F150069B17B /* FlashLabel.swift in Sources */,
 				E3530A421B4C2D6D0023CE3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +400,7 @@
 				E3530A5A1B4C2D6D0023CE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3530A5B1B4C2D6D0023CE3B /* Build configuration list for PBXNativeTarget "FlashLabelTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +409,7 @@
 				E3530A5D1B4C2D6D0023CE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
