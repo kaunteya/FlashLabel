@@ -12,6 +12,23 @@
 ####Direct
 Drag `FlashLabel.swift` to your project. That is it!
 
+####CocoaPods
+[CocoaPods 0.36](http://cocoapods.org) adds supports for Swift and embedded frameworks.
+
+To integrate FlashLabel into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+use_frameworks!
+
+pod 'FlashLabel'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 
 ##Usage
 In Interface builder, drag a `Label` from Object Library and set `Custom Class` to `FlashLabel`
