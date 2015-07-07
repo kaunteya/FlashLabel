@@ -9,14 +9,14 @@
 import Foundation
 import Cocoa
 
-class FlashLabel: NSTextField {
+public class FlashLabel: NSTextField {
     
     private var timer: NSTimer!
     private var timeSummation = CGFloat(0)
     let flashInterval = NSTimeInterval(0.5)
     var showTime: CGFloat!
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         self.setVisibility(false, animated: false)
     }
@@ -39,7 +39,7 @@ class FlashLabel: NSTextField {
         }
     }
     
-    func show(text: String, forDuration time: CGFloat, withFlash flash: Bool) {
+    public func show(text: String, forDuration time: CGFloat, withFlash flash: Bool) {
         self.setVisibility(true, animated: false)
         self.stringValue = text
         self.sizeToFit()
