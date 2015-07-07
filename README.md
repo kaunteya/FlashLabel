@@ -23,3 +23,7 @@ flashLabel.show("Please enter a valid password", forDuration: 3.1, withFlash: fa
 ##License
 `FlashLabel` is released under the MIT license. See LICENSE for details.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kaunteya/flashlabel/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
