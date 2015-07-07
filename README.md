@@ -1,8 +1,15 @@
 # FlashLabel
 
-`FlashLabel` is simple and lightweight Timer based Label for Mac OSX implemented in Swift
+`FlashLabel` is simple and lightweight Timer based Label for Mac OSX implemented in Swift.
 ![](./demo.gif)
 
+FlashLabel will fadeout the Label after a specific time.
+It can be used for
+- Alerts
+- Notification
+- Activity Progress
+
+The best part about flash label is that it does not demand user interaction unlike alerts and notifications.
 
 ##Requirements
 - Mac OS X 10.9
