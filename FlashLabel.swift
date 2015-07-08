@@ -39,6 +39,14 @@ public class FlashLabel: NSTextField {
         }
     }
     
+    /**
+    Shows the FlashLabel for specified time
+    
+    :param: text Stringvalue of the label
+    :param: time Time to live in seconds
+    :param: flash enabled will flash the label
+    
+    */
     public func show(text: String, forDuration time: CGFloat, withFlash flash: Bool) {
         self.setVisibility(true, animated: false)
         self.stringValue = text
