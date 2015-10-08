@@ -17,7 +17,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func buttonPressed(sender: NSButton) {
-        flashLabel.show("Please enter a valid password", forDuration: 1, withFlash: self.enableFlash)
+        flashLabel.show("Please enter a valid password", forDuration: 2, withFlash: self.enableFlash)
     }
 
 }

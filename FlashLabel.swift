@@ -19,82 +19,37 @@ public class FlashLabel: NSTextField {
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         self.wantsLayer = true
-//        self.layer!.contentsGravity = kCAGravityCenter
         self.layer!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
 
-        println("Anchor point \(self.layer!.anchorPoint)")
         self.setVisibility(false, animated: false)
-        makeShowAnimation()
-        makeHideAnimation()
     }
 
-    var visible: Bool {
-        get {
-            return self.layer!.opacity == 1
-        }
-    }
-
-    var showAnimation: CABasicAnimation!
-    func makeShowAnimation() {
+    var showAnimation: CABasicAnimation = {
+        var showAnimation = CABasicAnimation()
         showAnimation = CABasicAnimation(keyPath: "opacity")
-        showAnimation.duration = 1
+        showAnimation.duration = 2
         showAnimation.fromValue = 0
         showAnimation.toValue = 1
         showAnimation.repeatCount = 0
-    }
+        return showAnimation
+    }()
 
-    var hideAnimation: CAAnimationGroup!
-    func makeHideAnimation() {
-        var scaleXAnimation = CABasicAnimation(keyPath: "transform.scale.x")
-        scaleXAnimation.fromValue = 1
-        scaleXAnimation.toValue = 1.2
-        scaleXAnimation.duration = 1
-        scaleXAnimation.fillMode = kCAFillModeForwards
-        
-        
-        var boundsAnimation = CABasicAnimation(keyPath: "bounds")
-        boundsAnimation.fromValue =  NSValue(rect: self.bounds)
-        var newBounds = self.bounds
-        newBounds.size.width += 50
-        newBounds.size.height += 20
-        boundsAnimation.toValue = NSValue(rect: newBounds)
-        
-        
-        var scaleYAnimation = CABasicAnimation(keyPath: "transform.scale.y")
-        scaleYAnimation.fromValue = 1
-        scaleYAnimation.toValue = 1.5
-        scaleYAnimation.duration = 1
-        scaleYAnimation.fillMode = kCAFillModeForwards
+    var hideAnimation: CABasicAnimation = {
+        var showAnimation = CABasicAnimation()
+        showAnimation = CABasicAnimation(keyPath: "opacity")
+        showAnimation.duration = 2
+        showAnimation.fromValue = 1
+        showAnimation.toValue = 0
+        showAnimation.repeatCount = 0
+        return showAnimation
+        }()
 
-        var opacityAnimation = CABasicAnimation(keyPath: "opacity")
-        opacityAnimation.fromValue = 1
-        opacityAnimation.toValue = 0
-        opacityAnimation.repeatCount = 0
-
-        hideAnimation = CAAnimationGroup()
-        hideAnimation.animations = [scaleXAnimation, boundsAnimation]
-//        hideAnimation.animations = [scaleXAnimation, opacityAnimation]
-        hideAnimation.duration = 1
-        hideAnimation.delegate = self
-        }
-    
-    func setVisibility(enabled: Bool, animated: Bool) {
-        if animated {
-            if enabled {
-                self.layer!.addAnimation(showAnimation, forKey: "visible")
-            } else {
-                self.layer!.addAnimation(hideAnimation, forKey: "hidden")
-            }
-        }
-//        self.layer!.opacity  = enabled ? 1 : 0
-    }
-    
     /**
     Shows the FlashLabel for specified time
     
-    :param: text Stringvalue of the label
-    :param: time Time to live in seconds
-    :param: flash enabled will flash the label
+    - parameter text: Stringvalue of the label
+    - parameter time: Time to live in seconds
+    - parameter flash: enabled will flash/blink the label
     
     */
     public func show(text: String, forDuration time: CGFloat, withFlash flash: Bool) {
@@ -113,17 +68,27 @@ public class FlashLabel: NSTextField {
     func timerNotify() {
         self.setVisibility(false, animated: true)
     }
-    
+
+    private var visible = false
     func flashNotify() {
         if timeSummation < showTime {
             timeSummation += 0.5
-            self.setVisibility(!self.visible, animated: false)
+            self.setVisibility(visible, animated: false)
+            visible = !visible
         } else {
             timer.invalidate()
             self.setVisibility(false, animated: false)
         }
     }
-    public override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
-        println("Animation stopped")
+
+    func setVisibility(enabled: Bool, animated: Bool) {
+        if animated {
+            if enabled {
+                self.layer!.addAnimation(showAnimation, forKey: nil)
+            } else {
+                self.layer!.addAnimation(hideAnimation, forKey: nil)
+            }
+        }
+        self.layer!.opacity  = enabled ? 1 : 0
     }
 }
