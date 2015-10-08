@@ -12,7 +12,6 @@
 		E3530A491B4C2D6D0023CE3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3530A471B4C2D6D0023CE3B /* Main.storyboard */; };
 		E3530A551B4C2D6D0023CE3B /* FlashLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3530A541B4C2D6D0023CE3B /* FlashLabelTests.swift */; };
 		E3D8E7541B4C2F150069B17B /* FlashLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8E7531B4C2F150069B17B /* FlashLabel.swift */; };
-		E3F348F51BC64CAD00FB4317 /* FlashLabel.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E3F348F41BC64CAD00FB4317 /* FlashLabel.podspec */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +35,7 @@
 		E3530A541B4C2D6D0023CE3B /* FlashLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashLabelTests.swift; sourceTree = "<group>"; };
 		E3D8E7531B4C2F150069B17B /* FlashLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashLabel.swift; sourceTree = "<group>"; };
 		E3F348F41BC64CAD00FB4317 /* FlashLabel.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlashLabel.podspec; sourceTree = SOURCE_ROOT; };
+		E3F348F61BC64DC300FB4317 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E3F348F41BC64CAD00FB4317 /* FlashLabel.podspec */,
+				E3F348F61BC64DC300FB4317 /* README.md */,
 				E3530A531B4C2D6D0023CE3B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -202,7 +203,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3F348F51BC64CAD00FB4317 /* FlashLabel.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
