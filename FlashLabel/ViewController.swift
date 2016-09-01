@@ -12,11 +12,11 @@ class ViewController: NSViewController {
     var enableFlash: Bool = false
     @IBOutlet weak var flashLabel: FlashLabel!
     
-    @IBAction func enableFlash(_ sender: NSButton) {
+    @IBAction func enableFlash(sender: NSButton) {
         enableFlash = sender.state == NSOnState
     }
     
-    @IBAction func buttonPressed(_ sender: NSButton) {
+    @IBAction func buttonPressed(sender: NSButton) {
         flashLabel.show("Please enter a valid password", forDuration: 2, withFlash: self.enableFlash)
     }
 

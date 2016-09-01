@@ -11,9 +11,9 @@ import Cocoa
 
 public class FlashLabel: NSTextField {
     
-    private var timer: Timer!
+    private var timer: NSTimer!
     private var timeSummation = CGFloat(0)
-    let flashInterval = TimeInterval(0.5)
+    let flashInterval = NSTimeInterval(0.5)
     var showTime: CGFloat!
     
     required public init?(coder: NSCoder) {
@@ -52,16 +52,16 @@ public class FlashLabel: NSTextField {
     - parameter flash: enabled will flash/blink the label
     
     */
-    public func show(_ text: String, forDuration time: CGFloat, withFlash flash: Bool) {
+    public func show(text: String, forDuration time: CGFloat, withFlash flash: Bool) {
         self.setVisibility(true, animated: false)
         self.stringValue = text
         self.sizeToFit()
         if flash {
             timeSummation = 0
             showTime = time
-            timer = Timer.scheduledTimer(timeInterval: flashInterval, target: self, selector: #selector(FlashLabel.flashNotify), userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(flashInterval, target: self, selector: Selector("flashNotify"), userInfo: nil, repeats: true)
         } else {
-            timer = Timer.scheduledTimer(timeInterval: TimeInterval(time), target: self, selector: #selector(FlashLabel.timerNotify), userInfo: nil, repeats: false)
+            timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(time), target: self, selector: Selector("timerNotify"), userInfo: nil, repeats: false)
         }
     }
     
@@ -81,12 +81,12 @@ public class FlashLabel: NSTextField {
         }
     }
 
-    func setVisibility(_ enabled: Bool, animated: Bool) {
+    func setVisibility(enabled: Bool, animated: Bool) {
         if animated {
             if enabled {
-                self.layer!.add(showAnimation, forKey: nil)
+                self.layer!.addAnimation(showAnimation, forKey: nil)
             } else {
-                self.layer!.add(hideAnimation, forKey: nil)
+                self.layer!.addAnimation(hideAnimation, forKey: nil)
             }
         }
         self.layer!.opacity  = enabled ? 1 : 0
